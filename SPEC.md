@@ -38,7 +38,7 @@ A Data Block gives extra information about any element, including the root eleme
 Furthermore, the root element also implements the `author`, `title` and `copyright` attributes, though none are required.  
 Data Blocks are written as a pair of parentheses with attribute-value pairs separated by semicolons.
 
-Examples: 
+Examples:
 ```
 TheSpanishInquisition
   Nobody expects this paragraph! (info: This is a Monty Python reference.; importance: 3)
@@ -55,13 +55,13 @@ AllYourItemAreBelongToUs
   this gets treated as a paragraph
   2 so does this
   "This will appear as text with quotation marks around it"
-    And all of these bits of text will get treated 
+    And all of these bits of text will get treated
     as a list of blocks of text, because there's more than one
-    
+
 ```
 
 ### Explanations
-An Explanation is a special Paragraph that's used to explain something, obviously. 
+An Explanation is a special Paragraph that's used to explain something, obviously.
 You can explicitly define one by using the "=" syntax, like so:
 ```
 This is an Item
@@ -104,7 +104,7 @@ You can define a Result with the `->` syntax like this:
 This is the main Paragraph
   Hey look, an event
   ->This is a result of that event
-``` 
+```
 
 Chaining Results is useful when a series of events occur after a consequential event; like this:
 ```
@@ -133,7 +133,7 @@ ThisItemContainsInformation
 ```
 
 As you can see, a Region starts with "correct-facing" curly brackets and ends with "opposite-facing ones".  
-One of the strongest features of Regions are the fact that you can supply a data argument. Say, for example that you have a list of dates on which some important historical events happened. You want to display them nicely but you don't have dates for all of them, so you use a list like this: 
+One of the strongest features of Regions are the fact that you can supply a data argument. Say, for example that you have a list of dates on which some important historical events happened. You want to display them nicely but you don't have dates for all of them, so you use a list like this:
 ```
 The French Revolution
   Dissolution of the Ancien Régime
@@ -156,16 +156,16 @@ The currently supported Regions are:
    - Arguments: left, *center* (default), right
 
 ## Styling a note
-A Notorio style file (extension .nts) defines all the style elements of a note. This includes fonts, importance colours, look of regions and info text, border thickness and much more. .nts files look pretty similar to CSS, except without the semicolons and curly braces. An example styling file looks like this: 
+A Notorio style file (extension .nts) defines all the style elements of a note. This includes fonts, importance colours, look of regions and info text, border thickness and much more. .nts files look pretty similar to CSS, except without the semicolons and curly braces. An example styling file looks like this:
 
 ```
 Item
 	colour: l(240)
-	border-colour: l(160)
-	border-thickness: 2
+	borderColour: l(160)
+	borderThickness: 2
 	font: "Source Sans Pro", sans-serif
-	
-	importance-colours: {
+
+	importanceColours: {
 		1: rgb(147, 219, 166)
 		2: rgb(219, 213, 147)
 		3: rgb(227, 174, 120)
@@ -174,15 +174,13 @@ Item
 
 
 Explanation
-	font-size: [inherit] * 0.75
-	font-colour: l(50)
-
-
+	fontSize: [inherit] * 0.75
+	fontColour: l(50)
 ```
 ## Building a note
 Run `notorio -i <YOUR SOURCE FILE HERE>`. The default name is just the name of the source file.
 
-### Export quality 
+### Export quality
 Using the `-q` flag, you can choose an export quality. This is one of `low`, `med`, `high` or `very_high`.
 
 ### Styling
